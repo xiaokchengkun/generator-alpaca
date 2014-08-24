@@ -1,0 +1,461 @@
+//colors via github
+@import "../colors/colors";
+
+//公共样式
+@import "../public/public";
+
+@import "../ui/comment";
+
+
+//专题主体样式代码
+
+
+@mixin main-width{
+    width: 980px;
+    margin: 0 auto;
+}
+
+$main-color: #fff;
+$header-color: #fff;
+$border: 1px solid #eee;
+
+ul, p{
+    margin: 0;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+.now-price{
+    font-size: 18px;
+    color: #ff0000;
+}
+.big-font{
+    font-size: 30px;
+}
+
+.wrapper{
+    color: $black;
+    font: normal normal 14px/1.5 "Hiragino Sans GB", "Microsoft YaHei",Helvetica,sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+
+    .top-bar{
+        background-color: $white;
+        height: 50px; line-height: 50px;
+        border-bottom: 2px solid $blue;
+        padding: 0 5%;
+        position: relative;
+
+        .logo-lvyou{
+            display: inline-block;
+            position: relative;
+            img{
+                position: absolute; z-index: 1;
+            }
+        }
+
+        .user-bar{
+            position: absolute;
+            top: 0; right: 5%;
+        }
+
+        .user-info{
+            @include inline-block;
+        }
+    }
+
+    .main{
+        background-color: $main-color;
+        @include main-width;
+    }
+
+    .header{
+        height: 360px;
+    }
+
+    .detail-header{
+        .header-cover{
+            display: block;
+            float: left;
+            width: 400px; height: 265px;
+        }
+        .header-controller{
+            margin-left: 440px;
+        }
+        .header-price{
+            background-color: #f8f8f8;
+            line-height: 30px; padding: 10px 20px;
+        }
+        .departure, .start-time, .end-time{
+            margin: 15px 0;
+        }
+        .departure-select{
+            border: $border;
+            line-height: 24px;
+            padding: 3px 5px;
+            font-size: 14px;
+            outline: 0;
+            background-color: #fff;
+        }
+        .time-choose{
+            display: inline-block;
+            position: relative;
+            .time{
+                width: 110px;
+                border-right: 0;
+                display: inline-block;
+                cursor: pointer;
+                border: 1px solid #ececec;
+                line-height: 24px;
+                padding: 3px 5px;
+                font-size: 14px;
+                height: 24px;
+            }
+            .time-button{
+                display: inline-block;
+                width: 22px;
+                height: 22px;
+                position: absolute;
+                top: 4px; right: 4px;
+                background: url("../images/detail-icon.png") no-repeat;
+                cursor: pointer;
+            }
+            .ui-datepicker{
+                position: absolute;
+                left: 121px;
+                top: 0;
+                z-index: 3;
+                .not-access{
+                    color: #eee;
+                }
+            }
+            &:hover .time-button{
+                background-position: -1px -36px;
+            }
+        }
+    }
+
+    .get-ticket{
+        background: url("../images/detail-icon.png") no-repeat 0 -217px;
+        display: inline-block;
+        text-align: center;
+        width: 127px;
+        height: 38px;
+        line-height: 38px;
+        font-size: 16px;
+        color: #fff;
+        border: none;
+        cursor: default;
+        &.active{
+            background-position: 0 -73px;
+            cursor: pointer;
+            &:hover{
+                background-position: 0 -145px;
+            }
+        }
+    }
+
+
+    .container{
+        float: left;
+        width: 710px;
+        padding-top: 70px;
+        position: relative;
+    }
+
+    .container-part{
+        border: $border;
+        padding: 20px 30px;
+        margin-bottom: -1px;
+        font-size: 14px;
+        position: relative;
+        header{
+            font-size: 18px;
+            line-height: 20px;
+            margin-bottom: 15px;
+        }
+        &:before{
+            content: " ";
+            display: block;
+            position: absolute; top: 20px; left: -10px;
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            background-color: #ddd;
+        }
+    }
+
+    .sale-detail-wrapper{
+        overflow: hidden;
+        img{
+            max-width: 600px;
+        }
+    }
+
+    .plan-recommend{
+        .plan-recommend-wrapper{
+            overflow: hidden;
+            margin-right: -40px;
+        }
+        .plan-item{
+            float: left;
+            width: 310px;
+            margin-right: 25px;
+            color: #999;
+            font-size: 12px;
+            line-height: 22px;
+        }
+        .plan-cover{
+            display: block;
+            width: 310px; height: 160px;
+            overflow: hidden;
+        }
+        .plan-infos{
+            width: 288px;
+            border: $border;
+            border-top: none;
+            padding: 10px;
+        }
+        .plan-title{
+            font-size: 18px;
+            line-height: 30px;
+            color: #333;
+        }
+        .plan-count{
+            text-align: right;
+        }
+        .view-count{
+            background: url("../images/detail-icon.png") no-repeat 0 -322px;
+            padding-left: 18px;
+            margin-right: 20px;
+        }
+        .copy-count{
+            background: url("../images/detail-icon.png") no-repeat 0 -287px;
+            padding-left: 15px;
+        }
+
+    }
+
+    .comment-area-wrapper{
+        .comment-login-wrapper{
+            position: absolute;
+            top: 0; left: 0;
+            background: #fff;
+            width: 100%;
+            height: 150px;
+            text-align: center;
+            line-height: 80px;
+        }
+    }
+
+
+    .sidebar{
+        margin-left: 740px;
+        header{
+            font-size: 18px;
+            line-height: 50px;
+        }
+    }
+
+    .more-sale{
+        .sale-wrapper{
+        }
+        .sale-item{
+            margin-bottom: 20px;
+            width: 240px;
+            position: relative;
+        }
+        .sale-cover{
+            display: block;
+            width: 100%;
+            height: 158px;
+        }
+        .sale-time{
+            display: block;
+            position: absolute;
+            top: 0; left:0;
+            line-height: 28px;
+            text-indent: 20px;
+            width: 100%;
+            color: #fff;
+            background: rgba(0,0,0,.7);
+        }
+        .sale-info{
+            width: 238px; height: 65px;
+            border: $border;
+            border-top: none;
+            background-color: #f8f8f8;
+            position: relative;
+        }
+        .sale-title{
+            padding: 15px 0 0 20px;
+            width: 130px;
+            font-size: 14px;
+            line-height: 20px;
+            display: block;
+        }
+        .now-price{
+            font-size: 18px;
+            color: #ff0000;
+            position: absolute;
+            right: 10px; bottom: 0;
+        }
+        .big-font{
+            font-size: 30px;
+        }
+    }
+
+    .more-destination{
+        .destination-wrapper{
+            overflow: hidden;
+            margin-right: -10px;
+        }
+        .destination-item{
+            float: left;
+            width: 115px;
+            margin: 0 10px 10px 0;
+            background-color: #f7f7f7;
+            font-size: 12px;
+            line-height: 32px;
+            text-align: center;
+        }
+        .destination-cover{
+            display: block;
+            width: 100%;
+            height: 75px;
+        }
+        .item-name{
+            display: block;
+        }
+    }
+
+    .main-navigation{
+        background-color: #f8f8f8;
+        height: 50px; width: 100%;
+        position: absolute; top: 0; left: 0;
+        z-index: 2;
+        ul{
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        li{
+            float: left;
+        }
+        .nav{
+            color: #666;
+            font-size: 18px;
+            line-height: 46px;
+            width: 150px;
+            text-align: center;
+            display: inline-block;
+            border-top: 3px solid #f8f8f8;
+            &:hover{
+
+            }
+            &.active{
+                background-color: #f3f3f3;
+                border-top: 3px solid #18aaf2;
+
+            }
+        }
+        .nav-price{
+            float: right;
+            display: none;
+        }
+    }
+    .navigation-fixed{
+        position: fixed;
+        ul{
+            width: 980px;
+            margin: 0 auto;
+        }
+        .nav-price{
+            display: block;
+        }
+        .get-ticket{
+            position: relative;
+            top: -4px;
+        }
+    }
+    .anchor-offset{
+        position: relative;
+        top: -60px;
+    }
+
+    .friend-area{
+        border: 1px solid #eee;
+        background-color: #f8f8f8;
+        margin-bottom: 30px;
+        header{
+            padding-left: 20px;
+        }
+        .friend-link{
+            display: block;
+            height: 62px;
+            background: #fff url("../images/south-fly.png") no-repeat center center;
+        }
+        .friend-phone{
+            background: url("../images/phone-icon.png") no-repeat 15px center;
+            padding: 30px 0 30px 70px;
+        }
+        .phone-number{
+            color: #41ABEF;
+            font-weight: bold;
+        }
+    }
+
+    .side-fixed{
+        $content: 80px;
+
+        .side-navigation{
+            background-color: $main-color;
+            border-radius: 5px 5px 0 0;
+            text-align: center;
+            overflow: hidden;
+            .nav-anchor{
+                display: block;
+                margin: 10px 5px;
+                padding: 2px 0 0 0;
+                line-height: 24px;
+                border-radius: 2px;
+                color: $white;
+                &.active{
+                    @include background-alpha($white, 0.5);
+                }
+            }
+        }
+        .back-top{
+            $width: 2px;
+            $height: 40px;
+            $rotate: 40deg;
+            display: block;
+            width: $width; height: $height;
+            background-color: $white;
+            margin-top: 2px;
+            border:$content solid $main-color;
+            border-width: ($content - $height)/2 ($content - $width)/2;
+            border-radius: 0 0 5px 5px;
+
+            &:before, &:after{
+                content: "";
+                display: block;
+                width: 2px; height: 30px;
+                background-color: $white;
+                transform: rotate(-$rotate);
+                transform-origin: top;
+                position:absolute;
+            }
+            &:after{
+                transform: rotate($rotate);
+            }
+        }
+    }
+
+    .copyright{
+        text-align: center;
+        margin: 20px 0;
+        clear: both;
+    }
+}

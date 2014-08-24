@@ -1,0 +1,329 @@
+/*
+* 新规范中按钮 button样式重构
+* chengkun 2014.04
+* 按钮四种大小 btn-large btn-middle btn-small btn-smaller
+* 每种大小四种状态 btn-primary btn
+* ui开头的表示重置的jquery dialog ui的样式
+*/
+
+.button,
+.ui-dialog .ui-dialog-buttonset  .ui-button{
+    border: 0 none;
+    overflow: visible;
+    vertical-align: middle;
+    cursor: pointer;
+    display: inline-block;
+    background: transparent url("../images/public/buttons.png") no-repeat;
+    padding-left: 10px;
+    font-size:0;
+	outline: none;
+
+    em,
+    .ui-button-text{
+        display: inline-block;
+        text-align: center;
+        padding-right: 10px;
+        white-space: nowrap;
+        background: transparent url("../images/public/buttons.png") no-repeat;
+        font-size: 14px;
+    }
+
+    &::-moz-focus-inner{
+        border:0; padding:0; margin:0;
+    }
+}
+
+.button-primary{
+    &.button-large{
+        background-position: 0 0;
+        em{
+            background-position: right -50px;
+        }
+        &:hover{
+            background-position: 0 -100px;
+            em{
+                background-position: right -150px;
+            }
+        }
+    }
+    &.button-middle{
+        background-position: 0 -500px;
+        em{
+            background-position: right -550px;
+        }
+        &:hover{
+            background-position: 0 -600px;
+            em{
+                background-position: right -650px;
+            }
+        }
+    }
+    &.button-small{
+        background-position: 0 -1000px;
+        em{
+            background-position: right -1050px;
+        }
+        &:hover{
+            background-position: 0 -1100px;
+            em{
+                background-position: right -1150px;
+            }
+        }
+    }
+    &.button-smaller{
+        background-position: 0 -1500px;
+        em{
+            background-position: right -1550px;
+        }
+        &:hover{
+            background-position: 0 -1600px;
+            em{
+                background-position: right -1650px;
+            }
+        }
+    }
+}
+
+.button-default,
+.button-cancel{
+    &.button-large{
+        background-position: 0 -200px;
+        em{
+            background-position: right -250px;
+        }
+        &:hover{
+            background-position: 0 -300px;
+            em{
+                background-position: right -350px;
+            }
+        }
+    }
+    &.button-middle{
+        background-position: 0 -700px;
+        em{
+            background-position: right -750px;
+        }
+        &:hover{
+            background-position: 0 -800px;
+            em{
+                background-position: right -850px;
+            }
+        }
+    }
+    &.button-small{
+        background-position: 0 -1200px;
+        em{
+            background-position: right -1250px;
+        }
+        &:hover{
+            background-position: 0 -1300px;
+            em{
+                background-position: right -1350px;
+            }
+        }
+    }
+    &.button-smaller{
+        background-position: 0 -1700px;
+        em{
+            background-position: right -1750px;
+        }
+        &:hover{
+            background-position: 0 -1800px;
+            em{
+                background-position: right -1850px;
+            }
+        }
+    }
+}
+
+.button-disable{
+    &.button-large{
+        background-position: 0 -400px;
+        em{
+            background-position: right -450px;
+        }
+        &:hover{
+            background-position: 0 -400px;
+            em,.ui-button-text{
+                background-position: right -450px;
+            }
+        }
+    }
+    &.button-middle{
+        background-position: 0 -900px;
+        em{
+            background-position: right -950px;
+        }
+        &:hover{
+            background-position: 0 -900px;
+            em{
+                background-position: right -950px;
+            }
+        }
+    }
+    &.button-small{
+        background-position: 0 -1400px;
+        em{
+            background-position: right -1450px;
+        }
+        &:hover{
+            background-position: 0 -1400px;
+            em{
+                background-position: right -1450px;
+            }
+        }
+    }
+    &.button-smaller{
+        background-position: 0 -1900px;
+        em{
+            background-position: right -1950px;
+        }
+        &:hover{
+            background-position: 0 -1900px;
+            em{
+                background-position: right -1950px;
+            }
+        }
+    }
+}
+
+/*根据按钮种类分类*/
+.button-primary{
+    color: #fff;
+}
+.button-default{
+    color: #666;
+}
+.button-cancel{
+    color: #666;
+}
+.button-disable{
+    color: #dedede;
+}
+
+/*根据按钮大小分类*/
+.button-large{
+    line-height: 42px;
+    padding-left: 40px;
+    _background-position: 0 0;
+
+    em{
+        padding-right: 40px;
+        font-size: 18px;
+        _background-position: right -50px;
+    }
+}
+.button-middle{
+    line-height: 34px;
+    padding-left: 28px;
+    _background-position: 0 -500px;
+
+    em{
+        padding-right: 30px;
+        font-size: 14px;
+        _background-position: right -550px;
+    }
+}
+.button-small{
+    line-height: 28px;
+    padding-left: 20px;
+    _background-position: 0 -1000px;
+
+    em{
+        padding-right: 20px;
+        font-size: 14px;
+        _background-position: right -1050px;
+    }
+}
+.button-smaller{
+    line-height: 22px;
+    padding-left: 15px;
+    _background-position: 0 -1500px;
+
+    em{
+        padding-right: 15px;
+        font-size: 12px;
+        _background-position: right -1550px;
+    }
+}
+
+
+/*jquery dialog ui*/
+.ui-dialog{
+    .ui-dialog-buttonset{
+        .ui-button{
+            line-height: 34px;
+            padding-left: 30px;
+            color: #fff;
+            background-position: 0 -500px;
+            margin-right: 10px;
+            outline: none;
+
+            .ui-button-text{
+                background-position: right -550px;
+            }
+            &:hover{
+                background-position: 0 -600px;
+                .ui-button-text{
+                    background-position: right -650px;
+                }
+            }
+
+
+
+            &:last-child, &:first-child{
+                border: none;
+                width: auto; height: auto;
+            }
+            &:last-child{
+                color: #666;
+                background-position: 0 -700px;
+                .ui-button-text{
+                    background-position: right -750px;
+                }
+                &:hover{
+                    background-position: 0 -800px;
+                    .ui-button-text{
+                        background-position: right -850px;
+                    }
+                }
+            }
+            &:first-child{
+                color: #fff;
+                background-position: 0 -500px;
+                .ui-button-text{
+                    background-position: right -550px;
+                }
+                &:hover{
+                    background-position: 0 -600px;
+                    .ui-button-text{
+                        background-position: right -650px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset  .ui-button{
+    padding-left: 30px;
+    .ui-button-text{
+        float: left;
+        padding-right: 30px;
+    }
+}
+.ui-dialog .ui-dialog-buttonset .button-disable:first-child{
+    background-position: 0 -400px;
+    .ui-button-text{
+        background-position: right -450px;
+        color: #dedede;
+    }
+    &:hover{
+        background-position: 0 -300px;
+        .ui-button-text{
+            background-position: right -350px;
+
+        }
+    }
+}

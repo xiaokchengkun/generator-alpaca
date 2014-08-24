@@ -1,0 +1,68 @@
+<h1>
+<%=data.flight%>
+<%if (!data.nationality || data.nationality === '0' ){%>
+单程特价机票
+<%}%>
+</h1>
+<div class="header-main">
+	<img class="header-cover" src="<%=lite.getImg(data.pic_url, 2, 400, 265)%>">
+	<div class="header-controller">
+		<div class="header-price">
+			价格：
+			<span class="now-price">￥<span class="big-font J_now-price"></span></span>
+
+			<%if (data.nationality && data.nationality !== '0' ){%>
+				<span class="discount J_discount"><%=data.discount%>折</span>
+				<%if (data.price){%>
+					<del class="price">￥<%=data.price%></del>
+				<%}%>
+			<%}%>
+		</div>
+
+		<div class="header-select">
+			<div class="departure">
+				<label>出发城市：</label>
+				<select class="departure-select J_change-flight">
+					<%for (var i=0; i<data.departure.length; i++){%>
+						<%var depart = data.departure[i]%>
+						<option value=""><%=depart%></option>
+					<%}%>
+				</select>
+			</div>
+
+			<div class="start-time">
+				<label>出发日期：</label>
+				<div class="time-choose J_time-choose" data-type="leave">
+					<span class="time"><%=data.defaultLeave%></span>
+					<span class="time-button"></span>
+					<div class="J_datepicker"></div>
+				</div>
+			</div>
+
+			<%if (data.return && data.return != "0"){%>
+				<div class="end-time">
+				<label>返程日期：</label>
+				<div class="time-choose J_time-choose" data-type="back">
+					<span class="time"><%=data.defaultBack%></span>
+					<span class="time-button"></span>
+					<div class="J_datepicker"></div>
+				</div>
+			</div>
+			<%}%>
+
+			<%if(data.status == "-1"){%>
+				<button class="get-ticket J_need-login active">请先登录</button>
+			<%}else{%>
+				<button id="J_get-ticket" class="J_get-ticket get-ticket"></button>
+			<%}%>
+
+			<div class="share-sns nslog-area" data-nslog="{'type':716,'page':'', 'pos':'share-sns'}">
+                <span class="share-bar-label">分享到: </span>
+                <a class="share-tsina sns-share-btn" data-from="sina" href="###"></a>
+                <a class="share-tqq sns-share-btn" data-from="tqq" href="###"></a>
+                <a class="share-qzone sns-share-btn" data-from="qzone" href="###"></a>
+                <a class="share-renren sns-share-btn" data-from="renren" href="###"></a>
+            </div>
+		</div>
+	</div>
+</div>

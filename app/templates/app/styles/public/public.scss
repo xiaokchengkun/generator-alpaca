@@ -1,0 +1,95 @@
+@import "../normalize/normalize";
+
+@import "../ui/datepicker";
+
+@import "../ui/buttons";
+
+@import "../ui/dialog";
+
+@import "../ui/pagination";
+
+/** 部分reset
+*
+*/
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+button{
+    padding: 0;
+}
+
+/*  清除浮动
+*
+*/
+.clearfix{
+    &:after{
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    *zoom: 1;
+}
+
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+
+/*  兼容display: inline-block
+*
+*/
+@mixin inline-block{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+/*  兼容半透明背景
+*   $color 色值 #000000
+*   $alpha 透明度
+*/
+@mixin background-alpha ($color, $alpha: 0.6){
+    $rgba : rgba($color, $alpha);
+    $ie-hex-str: ie_hex_str($rgba);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled='false', startColorstr='#{$ie-hex-str}', endColorstr='#{$ie-hex-str}');
+    background: $rgba;
+}
+
+/** 变化的动画效果
+*
+*/
+@mixin transition ($prototype: all, $function: ease, $time: 0.6s){
+    transition: $prototype $function $time;
+}
+
+
+
+/** 分享到sns的icon样式
+*
+*
+*/
+.share-sns{
+    @include inline-block;
+    margin: 0 10px;
+    .share-bar-label{
+        vertical-align: top;
+    }
+    .sns-share-btn{
+        @include inline-block;
+        width: 18px; height: 18px;
+    }
+    $share-list: tsina, tqq, qzone, renren;
+    @each $share in $share-list{
+        $pos: index($share-list, $share) * (-19px) + 20px;
+        .share-#{$share} {
+            background: url("../images/public/share-icon.png") no-repeat 0 #{$pos};
+        }
+    }
+}

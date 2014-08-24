@@ -1,0 +1,42 @@
+<%for (var i=0; i<list.length; i++){%>
+<%var data = list[i]%>
+<%var link = "/event/s/southern-airlines/detail.html?sid=" + data.sid%>
+<%var target = "target='_blank'"%>
+<%var enableText = "去看看"%>
+
+<div class="flight-item flight-enable-<%=data.enable%>">
+	<%if (!data.enable){%>
+		<%link = "###"%>
+		<%target = ""%>
+		<%var enableText = "已抢光"%>
+	<%}%>
+	<a class="flight-link" href="<%=link%>" <%=target%>>
+		<%if (option.size === 'large'){%>
+		<img src="<%=lite.getImg(data.pic_url, 4, 308, 205)%>"/>
+		<%}else{%>
+		<img src="<%=lite.getImg(data.pic_url, 4, 150, 120)%>"/>
+		<%}%>
+		<span class="flight-mask">
+			<span class="enable-text"><%=enableText%></span>
+		</span>
+
+		<%if(data.sid === "b7acab240abb6cf9c05fccf3"){%>
+			<span class="flight-title"><%=data.flight%><br>（9月1日-11日出发）</span>
+		<%}else if(data.sid === "b0240abb6cf9c05f301acdf3"){%>
+			<span class="flight-title"><%=data.flight%><br>（9月16日-24日出发）</span>
+		<%}else{%>
+			<span class="flight-title"><%=data.flight%></span>
+		<%}%>
+	</a>
+	<div class="flight-info">
+		<span class="now-price">￥<span class="big-font"><%=data.newprice%></span>起</span>
+		<%if (data.discount){%>
+		<span class="discount"><%=data.discount%>折</span>
+		<%}%>
+		<%if (data.price){%>
+		<del class="price">￥<%=data.price%></del>
+		<%}%>
+	</div>
+	<span class="flight-time"><%=data.startdate%><br>0点开抢</span>
+</div>
+<%}%>

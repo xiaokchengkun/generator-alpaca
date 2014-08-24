@@ -1,0 +1,13 @@
+<%for (var i=0; i<list.length; i++){%>
+	<%var sale = list[i]%>
+	<div class="sale-item">
+		<a href="/event/s/southern-airlines/detail.html?sid=<%=sale.sid%>" target="_blank">
+			<img class="sale-cover" src="<%=lite.getImg(sale.pic_url, 3, 240, 158)%>">
+		</a>
+		<div class="sale-info">
+			<span class="sale-title"><%=sale.flight%></span>
+			<span class="now-price">￥<span class="big-font"><%=sale.newprice%></span></span>
+		</div>
+		<span class="sale-time"><%=sale.startdate%> 开抢</span>
+	</div>
+<%}%>

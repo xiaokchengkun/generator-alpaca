@@ -1,0 +1,166 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title><%= appname %></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild --><% if (includeModernizr) { %>
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+    <% } %>
+  </head>
+  <!--body上添加id可以用来区别不同页面-->
+<body id="zt-index-page">
+<div class="wrapper">
+    <!--头部用户信息栏-->
+    <section class="top-bar">
+        <div class="logo">
+            <a class="logo-lvyou" target="_blank" href="/">
+                <img src="./images/public/lvyou-logo.png" alt=""/>
+                百度旅游
+            </a>
+        </div>
+
+        <div class="user-bar">
+            <!--需要更改登录和退出的会跳页面地址 &u=xxx-->
+            <div class="user-info">
+                <span id="J_user-no-login">
+                <a id="J_user-login" href="###">登录</a> |
+                <a id="J_user-reg" href="https://passport.baidu.com/v2/?reg&tpl=lv&regType=1&u=">注册</a>
+                </span>
+                <span id="J_user-yes-login" style="display: none;">
+                <a id="J_user-name" target="_blank"></a>
+                <a id="J_user-logout" href="https://passport.baidu.com/?logout&bdstoken=&u=">退出</a>
+                </span>
+            </div>
+            <!--百度分享-->
+            <div class="share-sns nslog-area" data-nslog="{'type':716,'page':'', 'pos':'share-sns'}">
+                <span class="share-bar-label">分享到: </span>
+                <a class="share-tsina sns-share-btn" data-from="sina" href="###"></a>
+                <a class="share-tqq sns-share-btn" data-from="tqq" href="###"></a>
+                <a class="share-qzone sns-share-btn" data-from="qzone" href="###"></a>
+                <a class="share-renren sns-share-btn" data-from="renren" href="###"></a>
+            </div>
+        </div>
+    </section>
+
+    <!--主体部分-->
+    <section class="main" id="main">
+        <!--头图部分-->
+        <header class="header">
+            <div class="header-slogn">
+                <h1>8月18日00：00点开抢</h1>
+                <ul>
+                    <li>马累往返机票￥690</li>
+                    <li>曼谷/胡志明往返机票￥590</li>
+                    <li>法兰克福往返机票￥1990</li>
+                </ul>
+                <a class="lvyou-logo" title="百度旅游" href="/" target="_blank"></a>
+                <a class="south-flight-logo" title="中国南方航空" href="http://www.csair.com/cn/index.shtml" target="_blank"></a>
+            </div>
+            <div class="header-main">
+                <section class="flight-card" id="flight-card-title">
+                    <header class="">
+                        <hgroup><span class="big-font">领</span>免费机票 去见Ta</hgroup>
+                        <a class="flight-card-btn" id="J_card-show" href="#J_card-main">我要领</a>
+                    </header>
+                    <div class="card-main" id="J_card-main" style="display: none">
+                        <h2>
+                            <strong>心愿登机牌</strong>
+                            <p>填写百度旅游心愿登机牌，寄出并分享，就有可能获得免费往返机票！想见Ta，马上出发！</p>
+                        </h2>
+
+                        <div class="card-form">
+                            <div class="form-part">
+                                <label for="J_departure-input">我想从</label>
+                                <input id="J_departure-input" data-type="departure" class="typeahead" type="text" placeholder="出发城市">
+                                <label for="J_destination-input">飞往</label>
+                                <input id="J_destination-input" data-type="destination" class="typeahead" type="text" placeholder="到达城市">
+                            </div>
+                            <div class="form-part">
+                                <label for="J_content-input">因为：</label>
+                                <input id="J_content-input" data-type="content" class="form-content" type="text" placeholder="说明理由，您的心愿更容易实现哦~">
+                            </div>
+                            <div class="form-part">
+                                <label for="J_phone-input">手机号</label>
+                                <input id="J_phone-input" data-type="phone" type="text" placeholder="11位手机号码">
+                                <span class="tip">(如果心愿实现，度小游会联系你出票哦)</span>
+                            </div>
+
+                            <div class="form-part">
+                                <label for="J_vcode-input">验证码</label>
+                                <input id="J_vcode-input" data-type="vcode" type="text">
+                                <img class="vcode-image" id="J_vcode-image" src="./images/public/blank.png" alt="">
+                                <span class="tip"><a class="J_change-vcode" href="###">看不清，换一张</a></span>
+                            </div>
+                            <button class="card-submit disable" disabled="disabled" id="J_card-submit">寄出并分享</button>
+                        </div>
+
+                        <div class="card-tip">
+                            <header class="tip-title">活动须知</header>
+                            <ol>
+                                <li>活动时间：8月15日-8月27日</li>
+                                <li>旅行日期：11月1日-11月30日</li>
+                                <li>旅行航班：仅限南航目前支持航线</li>
+                                <li>中奖名单将会通过百度旅游官方微博及微信公众号公布，敬请关注。</li>
+                                <li>在法律法规许可范围内，百度旅游拥有对本次活动的解释权。</li>
+                            </ol>
+                        </div>
+
+                        <iframe class="card-weibo" width="240" height="310"  frameborder="0" scrolling="no" src="http://widget.weibo.com/livestream/listlive.php?language=zh_cn&width=240&height=310&uid=1747866052&skin=1&refer=1&appkey=&pic=0&titlebar=1&border=1&publish=1&atalk=1&recomm=1&at=0&atopic=%E9%A2%86%E5%85%8D%E8%B4%B9%E6%9C%BA%E7%A5%A8%EF%BC%8C%E5%8E%BB%E8%A7%81Ta&ptopic=%E9%A2%86%E5%85%8D%E8%B4%B9%E6%9C%BA%E7%A5%A8%EF%BC%8C%E5%8E%BB%E8%A7%81Ta&listid=349867251&dpc=1"></iframe>
+
+                        <button class="card-hide" id="J_card-hide">收起</button>
+                    </div>
+                </section>
+            </div>
+        </header>
+
+        <section class="container">
+            <header class="container-title" id="main-container-title"></header>
+            <article class="container-part container-top J_container-part" data-type="aroundworld" id="main-container-1">
+                <header><span class="part-title">环游世界</span></header>
+            </article>
+
+            <article class="container-part container-middle J_container-part" data-type="southeast" id="main-container-2">
+                <header><span class="part-title">热情东南亚</span></header>
+            </article>
+
+            <article class="container-part container-bottom container-style J_container-part" data-type="internal" id="main-container-3">
+                <header><span class="part-title">十一出发 国内低价</span></header>
+
+            </article>
+        </section>
+
+        <section id="J_side-fixed" class="side-fixed" style="display: none;"></section>
+
+        <!--百度旅游版权信息-->
+        <footer class="copyright">
+            &copy;  <time id="J_copyright-year"></time> Baidu
+            <a target="_blank" href="http://www.baidu.com/duty/" class="agreement">使用百度前必读 </a>
+            <a target="_blank" href="/help/uagreement">百度旅游用户协议 </a>
+            <a target="_blank" href="/help/contact" id="">联系我们 </a>
+        </footer>
+    </section>
+</div>
+<!--创建全局命名空间-->
+<script>
+    var lv = lv || {};
+    lv.session = lv.session || {};
+</script>
+<!--requirejs启动js-->
+<script data-main="scripts/main" src="scripts/lib/require.js"></script>
+<!--monkey 开发前在adoc上新建一个pageId: 138x-n-->
+<script type="text/javascript">var pageId = "138x-30";</script>
+<script type="text/javascript" src="http://img.baidu.com/hunter/lvyoumonkey.min.js"></script>
+</body>
+</html>

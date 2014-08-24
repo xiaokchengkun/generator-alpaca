@@ -1,0 +1,27 @@
+<%for (var i=0; i<list.length; i++){%>
+	<%var plan = list[i]%>
+	<div class="plan-item">
+		<a class="plan-cover" href="/plan/<%=plan.pl_id%>" target="_blank">
+			<img src="<%=lite.getImg(plan.pic_url, 1, 310, 160)%>">
+		</a>
+		<div class="plan-infos">
+			<a class="plan-title" href="/plan/<%=plan.pl_id%>" target="_blank"><%=plan.pl_name%></a>
+			<%if (plan.destination_list && plan.destination_list.length){%>
+			<p>目的地：
+				<%for (var j=0; j<plan.destination_list.length; j++){%>
+				<%var destination = plan.destination_list[j]%>
+				<%if (j !== 0){%>
+				<span>></span>
+				<%}%>
+				<a href="/<%=destination.surl%>" target="_blank"><%=destination.sname%></a>
+				<%}%>
+			</p>
+			<%}%>
+			<p>行程天数：<%=plan.days_cnt%>天</p>
+			<div class="plan-count">
+				<span class="view-count"><%=plan.view_count%></span>
+				<span class="copy-count"><%=plan.ext.copy_count%></span>
+			</div>
+		</div>
+	</div>
+<%}%>

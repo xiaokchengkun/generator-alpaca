@@ -1,0 +1,18 @@
+<div class="comment-item J_comment-item" data-reply_id="<%=reply_id%>">
+	<a class="fl" href="/user/<%=user.uid%>" target="_blank">
+		<img class="user-avatar avatar-middle" src="<%=user.avatar%>" alt=""/>
+	</a>
+	<div class="comment-main">
+		<p class="comment-word"><%=content%></p>
+		<p>
+			<a class="mr20" href="/user/<%=user.uid%>" target="_blank"><%=user.nickname%></a>
+			<span>发表于：<%=create_time%></span>
+		</p>
+		<div class="comment-tool">
+			<a class="comment-replay ml20" data-action="reply" href="###">回复</a>
+			<%if(can_delete){%>
+			<a class="comment-delete" data-action="delete" href="###">删除</a>
+			<%}%>
+		</div>
+	</div>
+</div>

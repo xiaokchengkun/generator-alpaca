@@ -1,0 +1,265 @@
+.ui-widget-overlay{
+    background: #000;
+    opacity: .2;
+    filter:Alpha(opacity=20);
+        z-index:88;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+}
+
+.ui-dialog{
+    outline: none;
+    background: #FFF;
+    zoom: 1; z-index:89;
+    border: 1px solid #9f9f9f;
+    box-shadow:0 0 5px #9f9f9f;
+        font-size: 14px;
+
+        .ui-dialog-titlebar{
+            border-bottom: 1px solid #eee;
+            height:40px;
+                background: #32a1e6;
+    }
+        .ui-dialog-title{
+            padding-left: 15px;
+            color: #fff;
+            font:normal normal 18px/40px "微软雅黑","黑体";
+    }
+        .ui-dialog-titlebar-close{
+            position: absolute;
+            cursor: pointer;
+            line-height: 0; font-size: 0; color: transparent; border:none;
+            outline: none;
+            background: url("./img/dialog-close.png") no-repeat 0 0;
+            height: 16px; width:16px;
+            top:12px; right: 12px;
+    }
+        .ui-dialog-content{
+            background-color: #fff;
+            font-size: 14px;
+    }
+
+        .ui-dialog-buttonpane{
+            background-color: #fff;
+            text-align: center;
+            padding: 10px 20px 15px;
+            .ui-button{
+                display: inline-block;
+                cursor: pointer; text-align: center;
+                background-color: #32A1E6;
+                border: 1px solid #32A1E6;
+                color: #fff;
+                font-size: 16px; line-height: 30px;
+                margin-right: 10px;
+                border-radius: 2px;
+                outline: none;
+        }
+            .ui-button:last-child{
+                background-color: #f1f2f5;
+                border: 1px solid #e1e4e8;
+                color: #333;
+                border-radius: 2px;
+        }
+    }
+}
+
+.disable .ui-dialog-buttonpane .ui-button{
+    background-color: #f1f2f5;
+    border: 1px solid #e1e4e8;
+    color: #ccc;
+}
+
+.ui-dialog-notitle{
+    .ui-dialog-titlebar{
+        border-bottom: none;
+        background: #FFF;
+}
+    .ui-dialog-title{
+        color: #333;
+}
+    .ui-dialog-titlebar-close{
+        background: url("./img/dialog-close-black.png") no-repeat 0 0;
+        height: 21px; width:21px;
+        top:12px; right: 12px;
+}
+}
+
+//test
+.dialog-animation{
+    .ui-dialog{
+        visibility: visible;
+}
+}
+.dialog-animation{
+    .ui-dialog{
+        transform: scale(0.7);
+        opacity: 0;
+        transition: all 0.3s;
+}
+}
+.dialog-animation.dialog-animation-default{
+    .ui-dialog{
+        transform: scale(1);
+        opacity: 1;
+}
+}
+
+.csstransforms{
+    .ui-dialog-notitle{
+        .ui-dialog-titlebar-close{
+            background: none;
+            &:before, &:after{
+                content:"\020";
+                display:block;
+                position: absolute;
+                background: #333;
+                transform: rotate(-45deg);
+        }
+            &:before{
+                width: 1px;
+                height: 21px;
+                left: 10px;
+                top: 1px;
+        }
+            &:after{
+                width: 21px;
+                height: 1px;
+        }
+    }
+}
+}
+
+
+.dialog-lite-overlay{
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background: #000;
+    filter:Alpha(opacity=50);
+    background: rgba(0, 0, 0, 0.5);
+    _position: absolute;
+    //transition-duration: 500ms;
+}
+
+.dialog-lite{
+    position: relative;
+    visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 10;
+    _position: absolute;
+
+    .dialog-lite-titlebar{
+        background: #fff;
+        height: 46px;
+        line-height: 46px;
+        margin: 0 15px;
+        border-bottom: 1px solid #f5f5f5;
+    }
+    .dialog-lite-close{
+        position: absolute; top:5px; right: 10px;
+        z-index: 10;
+        cursor: pointer;
+        padding-left: 12px; width: 14px; height: 26px;
+        &:before, &:after{
+            display: block;
+            content: "";
+            background: #333;
+        }
+        &:before{
+            width: 25px; height: 1px;
+            transform: translate(-12px,13px) rotate(-45deg);
+        }
+        &:after{
+            width: 1px; height: 25px;
+            transform: rotate(-45deg);
+        }
+    }
+    .dialog-lite-content{
+        text-align: center;
+        padding: 20px;
+    }
+    .dialog-lite-main{
+        position: relative; top: -50%; left: -50%;
+        width: 100%; height: 100%;
+        transition-property: all;
+        transition-timing-function: ease;
+        transition-duration: 500ms;
+        animation-duration: 500ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease;
+        background-color: #fff;
+        border-top: 3px solid #32a1e6;
+    }
+    .dialog-lite-button{
+        position: absolute;
+        bottom: 15px; left:0;
+        width: 100%;
+        text-align: center;
+        .dialog-button{
+            display: inline-block;
+            color: #FFF;
+            padding: 0 20px; margin: 0 10px;
+            font-size: 14px; line-height: 26px;
+            background: #f3a1a1;
+            text-decoration: none;
+            &:hover{
+            }
+        }
+    }
+}
+
+.dialog-show.dialog-lite{
+    visibility: visible;
+}
+
+.dialog-show.dialog-lite-overlay{
+    opacity: 1;
+}
+
+/*fadeIn*/
+.dialog-animator-fadeIn{
+    .dialog-lite-main{
+        opacity: 0;
+    }
+}
+.dialog-show.dialog-animator-fadeIn{
+    .dialog-lite-main{
+        opacity: 1;
+    }
+}
+/*rotate-from-left-3D*/
+.dialog-animator-rotate-from-left-3D {
+    .dialog-lite-main{
+        transform: translateZ(100px) translateX(-30%) rotateY(90deg);
+        transform-style: preserve-3d;
+        transform-origin: 0 100%;
+        opacity: 0;
+    }
+    &.dialog-show{
+        .dialog-lite-main{
+            transform: translateZ(0px) translateX(0%) rotateY(0deg);
+            opacity: 1;
+        }
+    }
+}
+
+
+.dialog-animator-sign-3D{
+    .dialog-lite-main{
+        transform: rotateX(-60deg);
+        transform-origin: 50% 0;
+        transform-style: preserve-3d;
+        opacity: 0;
+    }
+    &.dialog-show{
+        .dialog-lite-main{
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,668 @@
+//colors via github
+@import "../colors/colors";
+
+//公共样式
+@import "../public/public";
+
+
+//专题主体样式代码
+
+
+@mixin main-width{
+    width: 1020px;
+    margin: 0 auto;
+}
+
+$main-color: #ffed72;
+$header-color: #0b8ce5;
+$side-navigation-color: #ed5245;
+
+.hide{
+    display: none;
+}
+
+
+.wrapper{
+    color: $black;
+    font: normal normal 14px/1.5 "Hiragino Sans GB", "Microsoft YaHei",Helvetica,sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+
+    .top-bar{
+        background-color: $white;
+        height: 50px; line-height: 50px;
+        border-bottom: 2px solid $blue;
+        padding: 0 5%;
+        position: relative;
+
+        .logo-lvyou{
+            display: inline-block;
+            position: relative;
+            img{
+                position: absolute; z-index: 1;
+            }
+        }
+
+        .user-bar{
+            position: absolute;
+            top: 0; right: 5%;
+        }
+
+        .user-info{
+            @include inline-block;
+        }
+    }
+
+    .main{
+        background-color: $main-color;
+    }
+
+    .header{
+        background: $header-color url(../images/header.jpg) no-repeat center top;
+        min-height: 700px;
+        overflow: hidden;
+        color: $white;
+
+        hgroup{
+            @include main-width;
+            font-size: 20px;
+            line-height: 32px;
+            padding:5px 0;
+        }
+
+        .big-font{
+            font-size: 34px;
+        }
+
+        h1{
+            position: absolute; top: 174px; left: 90px;
+            font-size: 20px;
+        }
+
+
+        .header-slogn{
+            @include main-width;
+            position: relative;
+        }
+        .lvyou-logo, .south-flight-logo{
+            position: absolute;
+            top: 40px;
+            display: block;
+        }
+        .lvyou-logo{
+            width: 125px;
+            height: 40px;
+            left: 10px;
+        }
+        .south-flight-logo{
+            left: 180px;
+            width: 220px;
+            height: 45px;
+        }
+        ul{
+            position: absolute;
+            top: 390px;
+            left: 20px;
+            list-style-type: disc;
+            line-height: 34px;
+            font-size: 16px;
+        }
+        .header-main{
+            @include main-width;
+            margin-top: 570px;
+        }
+        .flight-card{
+            text-align: center;
+
+        }
+        .flight-card-btn{
+            background: url("../images/card-show.png") no-repeat;
+            width: 373px; height: 68px;
+            font-size: 30px; line-height: 68px;
+            text-align: center;
+            color: #ed5245;
+            border: none;
+            font-weight: bold;
+            display: inline-block;
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+        .card-main{
+            background: url("../images/card-bg.png") no-repeat;
+            height: 470px;
+            margin: 30px 0 40px;
+            overflow: hidden;
+            padding: 0 20px 20px 20px;
+            text-align: left;
+            color: #333;
+            position: relative;
+            h2{
+                font-size: 14px;
+                text-align: left;
+                line-height: 56px;
+                color: #fff;
+            }
+            strong{
+                float: left;
+                font-size: 24px;
+                line-height: 46px;
+                margin-right: 20px;
+            }
+            input{
+                line-height: 26px;
+                padding: 4px;
+                width: 142px;
+                border: 1px solid #dce5ee;
+                font-size: 14px;
+                outline: none;
+                vertical-align: top;
+            }
+            label{
+                display: inline-block;
+                padding: 0 5px 0 0;
+                line-height: 36px;
+                vertical-align: top;
+            }
+            ol{
+                padding-left: 30px;
+            }
+            .card-form{
+                margin-left: 15px;
+            }
+            .form-part{
+                margin: 25px 0;
+            }
+            .card-submit{
+                background: url("../images/card-btn.png") no-repeat;
+                width: 231px; height: 58px;
+                border: none;
+                color: #fff;
+                font-size: 14px;
+                line-height: 58px;
+                text-align: center;
+                margin: 10px 0 0 125px;
+                &:hover{
+                    opacity: 0.8;
+                }
+                &.disable{
+                    opacity: 0.5;
+                    &:hover{
+                        opacity: 0.5;
+                    }
+                }
+            }
+            .form-content{
+                width: 336px;
+            }
+            .tip{
+                color: #999;
+                margin-left: 10px;
+                font-size: 12px;
+                display: inline-block;
+                line-height: 36px;
+            }
+            .card-tip{
+                position: absolute;
+                right: 300px;
+                top: 94px;
+                width: 210px;
+                height: 267px;
+                padding: 20px 10px 20px 0;
+                color: #c73e5b;
+                border-radius: 10px;
+                border: 3px solid #d78292;
+                font-size: 12px;
+                line-height: 18px;
+            }
+            .tip-title{
+                font-size: 16px;
+                font-weight: bold;
+                margin-left: 12px;
+            }
+            .card-hide{
+                display: block;
+                width: 120px;
+                font-size: 14px;
+                padding: 10px 0;
+                color: #fff;
+                text-align: center;
+                margin: 40px auto 0;
+                border: 1px solid #fff;
+                background-color: transparent;
+                border-radius: 4px;
+                cursor: pointer;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+            .vcode-image{
+                vertical-align: middle;
+                margin-top: 3px;
+            }
+            .card-weibo{
+                position: absolute;
+                top: 95px; right: 20px;
+            }
+            .error{
+                border-color: #ff0000;
+            }
+        }
+    }
+
+    .main-navigation{
+        @include background-alpha(#000, 0.8);
+        height: 100px;
+        line-height: 100px;
+        color: #FFF;
+
+        ul{
+            @include main-width;
+            font-size: 20px;
+            list-style: none;
+            text-align: center;
+            display: box;
+            li{
+                box-flex: 1;
+            }
+        }
+
+        a{
+            display: block;
+            color: $white;
+            @include transition;
+            &:hover{
+                @include background-alpha(#000, 0.9);
+                @include transition;
+            }
+        }
+    }
+
+    .container{
+        @include main-width;
+        margin-bottom: 40px;
+        padding: 20px 0;
+        margin-top: 180px;
+        background-color: #fff;
+        position: relative;
+    }
+
+    .container-part{
+        margin-bottom: 40px;
+        header{
+            background-color: #0a9de5;
+            height: 18px;
+            margin-right: 25px;
+        }
+        .part-title{
+            background-color: #fff;
+            padding: 0 30px 0 20px;
+            margin-left: 5px;
+            font-size: 18px;
+            display: inline-block;
+        }
+    }
+
+    .container-title{
+        background: url("../images/main-title.png") no-repeat;
+        height: 130px;
+        width: 100%;
+        position: absolute;
+        top: -130px; left: 0;
+    }
+
+    .container-middle{
+        header{
+            background-color: #ed5245;
+        }
+    }
+    .container-bottom{
+        header{
+            background-color: #66018a;
+        }
+    }
+
+    .flight-tab{
+        padding: 0;
+        margin: 25px 0 0 20px;
+        overflow: hidden;
+        li{
+            float: left;
+        }
+        a{
+            color: #18aaf2;
+            display: inline-block;
+            font-size: 16px;
+            line-height: 40px;
+            padding: 0 20px;
+            &:hover{
+                background-color: #18aaf2;
+                color: #fff;
+            }
+        }
+        .active{
+            background-color: #18aaf2;
+            color: #fff;
+        }
+    }
+
+    .flight-wrapper{
+        padding-left: 20px;
+        .flight-item{
+            width: 308px;
+            float: left;
+            margin: 25px 25px 0 0;
+            position: relative;
+            overflow: hidden;
+            img{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .flight-link{
+            display: block;
+            height: 205px;
+            position: relative;
+        }
+        .flight-info{
+            border: 1px solid #dbdbdb;
+            border-top: none;
+            background-color: #fff;
+            padding: 10px;
+            font-size: 20px;
+            height: 40px;
+            vertical-align: middle;
+        }
+        .flight-title{
+            position: absolute; left:0; bottom: 0;
+            line-height: 24px;
+            font-size: 20px;
+            color: #fff;
+            padding: 10px 0;
+            text-indent: 10px;
+            width: 100%;
+            background: url("../images/flight-mask.png");
+            background: rgba(0,0,0,.4);
+        }
+        .flight-time{
+            position: absolute;
+            top: 0; left: 10px;
+            background: url("../images/begin-icon.png") no-repeat;
+            width: 80px; height: 70px;
+            padding-top: 5px;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+        }
+        .now-price{
+            font-size: 18px;
+            color: #ff0000;
+            float: right;
+        }
+        .big-font{
+            font-size: 30px;
+        }
+        .price{
+            font-size: 14px;
+            color: #999;
+            padding-left: 10px;
+            float: left;
+            line-height: 44px;
+        }
+        .discount{
+            font-size: 14px;
+            color: #111;
+            float: left;
+            line-height: 44px;
+        }
+        .flight-mask{
+            display: none;
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url("../images/flight-mask.png");
+            background: rgba(0,0,0,0.4);
+        }
+        .enable-text{
+            display: block;
+            width: 150px;
+            height: 30px;
+            text-align: center;
+            border: 2px solid #fff;
+            color: #fff;
+            font-size: 14px;
+            line-height: 30px;
+            position: absolute;
+            top: 50%; left: 50%;
+            margin: -15px 0 0 -75px;
+            border-radius: 3px;
+        }
+        .flight-enable-1{
+            &:hover{
+                .flight-mask{
+                    display: block;
+                }
+                .flight-info{
+                    background-color: #18aaf2;
+                    color: #fff;
+                    border-color: #18aaf2;
+                }
+                .discount, .price{
+                    color: #fff;
+                }
+                .flight-title{
+                    background: none;
+                }
+            }
+            .enable-text{
+                color: #18aaf2;
+                border: 2px solid #18aaf2;
+            }
+        }
+        .flight-enable-0{
+            .flight-link{
+                cursor: default;
+            }
+            .flight-mask{
+                display: block;
+            }
+            .flight-title{
+                background: none;
+            }
+            .flight-info{
+                background-color: #dbdbdb;
+                color: #666;
+                border-color: #dbdbdb;
+            }
+        }
+    }
+
+
+
+    .container-style{
+        .flight-item{
+            width: 230px;
+            margin: 20px 20px 0 0;
+            img{
+                width: 150px;
+            }
+        }
+        .flight-link{
+            height: 120px;
+            float: left;
+        }
+        .flight-info{
+            width: 59px;
+            margin-left: 150px;
+            border-left: none;
+            border-top: 1px solid #dbdbdb;
+            height: 98px;
+        }
+        .flight-title{
+            bottom: auto; top: 0;
+        }
+        .flight-time{
+            position: absolute;
+            top: 0; left: 0;
+        }
+        .now-price{
+            font-size: 12px;
+            line-height: 20px;
+            position: absolute;
+            bottom: 10px; right: 10px;
+        }
+        .big-font{
+            font-size: 20px;
+        }
+        .price{
+            font-size: 12px;
+            line-height: 20px;
+        }
+        .discount{
+            font-size: 12px;
+            line-height: 20px;
+        }
+        .enable-text{
+            width: 80px;
+            margin: -15px 0 0 -40px;
+        }
+        .flight-time{
+            display: none;
+        }
+    }
+
+    .side-fixed{
+        $content: 80px;
+
+        .side-navigation{
+            text-align: center;
+            white-space: nowrap;
+            .nav-anchor{
+                background: $side-navigation-color url("../images/side-icon.png") no-repeat 0 0;
+                display: block;
+                margin: 5px 0;
+                line-height: 56px;
+                width: 54px; height: 54px;
+                color: $white;
+                font-size: 0;
+                &:hover{
+                    margin-left: -90px;
+                    font-size: 20px;
+                    padding: 0 20px 0 70px;
+                    font-size: 14px;
+                }
+            }
+            .nav-low{
+                background-position: 0 -72px;
+            }
+        }
+        .back-top{
+            display: block;
+            width: 54px; height: 54px;
+            background: url("../images/side-icon.png") no-repeat 0 -144px;
+        }
+    }
+
+    .copyright{
+        text-align: center;
+        padding: 30px 0;
+        background-color: #f7f7f7;
+    }
+}
+
+
+.share-dialog{
+    color: #666;
+    p{
+        margin: 0;
+    }
+    .share-sns{
+        margin-top: 20px;
+    }
+    .share-bar-label{
+        float: left;
+        line-height: 40px;
+        margin-right: 10px;
+    }
+    .sns-share-btn{
+        background: url("../images/share-icon.png") no-repeat;
+        width: 40px; height: 40px;
+        margin-right: 10px;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+    .share-weixin{
+        background-position: 0 0;
+    }
+    .share-tsina{
+        background-position: -55px 0;
+    }
+    .share-qzone{
+        background-position: -108px 0;
+    }
+    .share-tqq{
+        background-position: -163px 0;
+    }
+    .weixin-wrapper{
+        border: 1px solid #e9e9e9;
+        background-color: #fff;
+        padding: 15px 10px 15px 120px;
+        text-align: left;
+        position: relative;
+        margin-top: 10px;
+        color: #9e9e9e;
+        font-size: 12px;
+        height: 80px;
+        strong{
+            font-size: 14px;
+            color: #6e6e6e;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .arrow-out, .arrow-in{
+            display: block;
+            position: absolute; left: 75px; top: -12px;
+            width: 0; height:0;
+            border-style: dashed dashed solid dashed;
+        }
+        .arrow-out{
+            border-width: 6px;
+            border-color: transparent transparent #e9e9e9;
+        }
+        .arrow-in{
+            border-width: 5px; top: -4px; left: -5px;
+            border-color: transparent transparent #fff;
+        }
+    }
+    .weixin-code{
+        width: 100px; height: 100px;
+        position: absolute; left: 5px; top: 5px;
+    }
+}
+
+.tt-dropdown-menu {
+    width: 222px;
+    margin-top: 1px;
+    padding: 2px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+    padding: 3px 10px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.tt-suggestion.tt-cursor {
+    color: #fff;
+    background-color: #0097cf;
+}
+
+.tt-suggestion p {
+    margin: 0;
+}

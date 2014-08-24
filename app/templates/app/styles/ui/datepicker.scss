@@ -1,0 +1,54 @@
+/*重置日历组件样式*/
+.ui-datepicker{
+    padding: 0;
+    width: 180px; margin: 0 auto;
+    background-color: #fff;
+    font-size:12px;
+    border: 1px solid #eee;
+    padding: 5px;
+
+    .ui-datepicker-header{
+        position:relative;
+        overflow: hidden;
+    }
+    tbody td {
+        border: 1px solid #eee;
+        padding: 0;
+        width:24px; height: 24px;
+        line-height: 24px;
+        text-align: center;
+
+        .ui-state-default{
+            display:block;
+            width: 100%;
+            text-decoration: none;
+        }
+        .ui-state-hover{
+            background-color: #fff4ca;
+        }
+    }
+    table{
+        width: 100%;
+        margin: 15px 0;
+    }
+    .ui-datepicker-current-day,
+    .ui-datepicker-today{
+        background-color: #fff4ca;
+    }
+    .ui-datepicker-prev,
+    .ui-datepicker-next{
+        position: absolute; display: block;
+        width:20px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .ui-datepicker-prev{
+        left:0;
+    }
+    .ui-datepicker-next{
+        right:0;
+    }
+    .ui-datepicker-title{
+        margin:0 25px
+    }
+}

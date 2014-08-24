@@ -1,0 +1,74 @@
+.comment-area-wrapper{
+	position: relative;
+	margin-top: 40px;
+	.view-end-sign{
+		position: absolute; top: -45px; left: 20px;
+		height: 0; width: 0;
+		font-size: 0; line-height: 0;
+		border-width: 6px;
+		border-color: transparent transparent #b5bbc5 transparent;
+		border-style: dashed dashed solid dashed;
+	}
+	.comment-header{
+		font-size: 24px;
+		line-height: 50px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #e7e8e9;
+		.comment-count{
+			font: 12px/44px Tahoma;
+		}
+	}
+	.comment-btn{
+		overflow: hidden;
+		.button-primary{
+			color: #fff;
+		}
+	}
+	.comment-input{
+		display: block;
+		padding: 5px;
+		margin-bottom: 10px;
+		height: 90px;
+		width: 635px;
+		background-color: #fbfbfb;
+		border: 1px solid #ecebeb;
+		outline: none;
+		resize: none;
+	}
+	.comment-counter{
+		float: right;
+		font: 12px/28px Tahoma;
+		margin-right: 20px;
+	}
+
+	.comment-item{
+		position: relative;
+		padding: 20px 10px;
+		border-bottom: 1px dashed #d9d9d9;
+		.user-avatar{
+			margin-right: 20px;
+		}
+		.comment-main{
+			overflow: hidden;
+			color: #999;
+		}
+		.comment-word{
+			line-height: 20px;
+			margin-bottom: 10px;
+			color: #333;
+			word-break: break-all;
+		}
+		.comment-tool{
+			position: absolute;
+			bottom: 20px; right: 20px;
+			text-align: right;
+		}
+	}
+	.prompt-default{
+		color: #999;
+	}
+	.user-avatar{
+		width: 50px; height: 50px;
+		border-radius: 50%;
+	}
+}
