@@ -1,0 +1,30 @@
+<section class="top-bar">
+    <div class="logo">
+        <a class="logo-lvyou" target="_blank" href="/">
+            <img src="./images/public/lvyou-logo.png" alt=""/>
+            百度旅游
+        </a>
+    </div>
+
+    <div class="user-bar">
+        <!--需要更改登录和退出的会跳页面地址 url代表当前页面页面-->
+        <div class="user-info">
+            <span id="J_user-no-login">
+            <a id="J_user-login" href="###">登录</a> |
+            <a id="J_user-reg" href="https://passport.baidu.com/v2/?reg&tpl=lv&regType=1&u={%url%}">注册</a>
+            </span>
+            <span id="J_user-yes-login" style="display: none;">
+            <a id="J_user-name" target="_blank"></a>
+            <a id="J_user-logout" href="https://passport.baidu.com/?logout&bdstoken=&u={%url%}">退出</a>
+            </span>
+        </div>
+        <!--百度分享 page代表当前nslog的唯一id-->
+        <div class="share-sns nslog-area" data-nslog="{'type':716,'page':'{%page%}', 'pos':'share-sns'}">
+            <span class="share-bar-label">分享到: </span>
+            <a class="share-tsina sns-share-btn" data-from="sina" href="###"></a>
+            <a class="share-tqq sns-share-btn" data-from="tqq" href="###"></a>
+            <a class="share-qzone sns-share-btn" data-from="qzone" href="###"></a>
+            <a class="share-renren sns-share-btn" data-from="renren" href="###"></a>
+        </div>
+    </div>
+</section>
